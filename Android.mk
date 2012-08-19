@@ -136,6 +136,8 @@ else
 LOCAL_CFLAGS += -O3
 endif
 
+LOCAL_CFLAGS += -fno-strict-aliasing
+
 LOCAL_MODULE := libMesa
 LOCAL_MODULE_CLASS := STATIC_LIBRARIES
 LOCAL_IS_HOST_MODULE := true
@@ -182,6 +184,7 @@ LOCAL_CFLAGS += -DUSE_LLVM_EXECUTIONENGINE=0
 LOCAL_SHARED_LIBRARIES += libbcc libbcinfo
 endif
 
+LOCAL_CFLAGS += -fno-strict-aliasing
 LOCAL_C_INCLUDES := $(libMesa_C_INCLUDES)
 
 include $(LIBBCC_GEN_CONFIG_MK)
