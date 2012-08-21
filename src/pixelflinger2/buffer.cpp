@@ -131,7 +131,7 @@ static void ClearDepthf(GGLInterface * iface, GLclampf d)
    GGL_GET_CONTEXT(ctx, iface);
    // assuming ieee 754 32 bit float and 32 bit 2's complement int
    assert(sizeof(d) == sizeof(ctx->clearState.depth));
-   ctx->clearState.depth = (int &)d; // bit reinterpretation
+   memcpy(&ctx->clearState.depth, &d, sizeof(int)); /*ctx->clearState.depth = (int &)d;*/ // bit reinterpretation
    if (0x80000000 & ctx->clearState.depth) // smaller negative float has bigger int representation, so flip
       ctx->clearState.depth ^= 0x7fffffff; // since -FLT_MAX is close to -1 when bitcasted
 }
