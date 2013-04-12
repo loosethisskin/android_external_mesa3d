@@ -41,7 +41,7 @@
 #define __location__                __FILE__ ":" __HIERALLOC_STRING_2__
 #endif
 #undef assert
-#define assert(EXPR) { do { if (!(EXPR)) {ALOGD("\n*\n*\n*\n* assert fail: '"#EXPR"' at " __location__ "\n*\n*\n*"); exit(EXIT_FAILURE); } } while (false); }
+#define assert(EXPR) { do { if (!(EXPR)) {ALOGD("\n*\n*\n*\n* assert fail: '"#EXPR"' at "__location__"\n*\n*\n*"); exit(EXIT_FAILURE); } } while (false); }
 
 #else // #ifdef __arm__
 

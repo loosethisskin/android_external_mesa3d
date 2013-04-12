@@ -17,10 +17,10 @@
 #endif
 
 #define hieralloc(ctx, type) (type *)hieralloc_allocate(ctx, sizeof(type), #type)
-#define hieralloc_size(ctx, size) hieralloc_allocate(ctx, size, "sz:" __location__)
+#define hieralloc_size(ctx, size) hieralloc_allocate(ctx, size, "sz:"__location__)
 #define hieralloc_new(ctx) hieralloc_allocate(ctx, 0, "nw:" __location__)
 #define hieralloc_zero(ctx, type) (type *)_hieralloc_zero(ctx, sizeof(type), "zr:"#type)
-#define hieralloc_zero_size(ctx, size) _hieralloc_zero(ctx, size, "zrsz:" __location__)
+#define hieralloc_zero_size(ctx, size) _hieralloc_zero(ctx, size, "zrsz:"__location__)
 #define hieralloc_array(ctx, type, count) (type *)hieralloc_allocate(ctx, sizeof(type) * count, "ar:"#type)
 #define hieralloc_realloc(ctx, p, type, count) (type *)hieralloc_reallocate(ctx, p, sizeof(type) * count, "re:"#type)
 
